@@ -16,7 +16,8 @@ lives = 6
 display = []
 for _ in range(len(chosen_word)):
     display += "_"
-  
+
+wrong_guess = []      
 while end_of_game == False:
     guess = input("Guess a letter: ").lower()
     #Check if letter already guessed right
@@ -26,12 +27,12 @@ while end_of_game == False:
     #Check guessed letter. Loop through each position in the chosen_word; If the letter at that position matches 'guess' then reveal that letter in the display at that position.
     for i in range(len(chosen_word)):
         letter = chosen_word[i]
-        # print(f"Current position: {position}\n Current letter: {letter}\n Guessed letter: {guess}") if want to see loop
+        # #see the loop
+        # print(f"Current position: {position}\n Current letter: {letter}\n Guessed letter: {guess}") 
         if letter == guess:
             display[i] = letter
 
-    #Check if user is wrong. End game if user loses all lives.
-    wrong_guess = []     
+    #Check if user is wrong. End game if user loses all lives.   
     if (guess not in chosen_word) and (guess not in wrong_guess):         
       print(f"You have entered '{guess}' which is not in the word. You lose one life.")
       lives -= 1
