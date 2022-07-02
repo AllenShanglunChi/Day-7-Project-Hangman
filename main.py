@@ -20,7 +20,7 @@ for _ in range(len(chosen_word)):
 wrong_guess = []      
 while end_of_game == False:
     guess = input("Guess a letter: ").lower()
-    #Handle the case where the user accidentally enters more than one letter or anthing other than a letter.
+    #Handle the case where the user accidentally enters more than one letter or anything other than a letter.
     if len(guess) >1 or guess.isalpha() == False:
         print("please enter only one single letter of the alphabet at any one time!")
     else:
@@ -44,7 +44,7 @@ while end_of_game == False:
           end_of_game = True
           print("You lose.")
           
-        wrong_guess += guess 
+        wrong_guess.append(guess) 
        
       #for letters already guessed wrong
       elif (guess not in chosen_word) and (guess in wrong_guess):
