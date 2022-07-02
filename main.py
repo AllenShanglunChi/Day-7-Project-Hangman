@@ -21,7 +21,7 @@ wrong_guess = []
 while end_of_game == False:
     guess = input("Guess a letter: ").lower()
     #Handle the case where the user accidentally enters more than one letter or anthing other than a letter.
-    if len(guess) >1 or str.isalpha(guess) == False:
+    if len(guess) >1 or guess.isalpha() == False:
         print("please enter only one single letter of the alphabet at any one time!")
     else:
       #Check if letter already guessed right
