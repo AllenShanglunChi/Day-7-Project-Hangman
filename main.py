@@ -32,19 +32,19 @@ while end_of_game == False:
         if letter == guess:
             display[i] = letter
 
-    #Check if user is wrong. End game if user loses all lives.   
+    #Check if user is wrong. End game if user loses all lives. Add wrong letters already guessed in wrong guess list.Check if already guessed wrong  
     if (guess not in chosen_word) and (guess not in wrong_guess):         
       print(f"You have entered '{guess}' which is not in the word. You lose one life.")
       lives -= 1
+      if lives == 0:
+        end_of_game = True
+        print("You lose.")
+        
       wrong_guess += guess 
      
-    #check if letter already guessed wrong
+    #for letters already guessed wrong
     elif (guess not in chosen_word) and (guess in wrong_guess):
       print(f"You have entered '{guess}', which you already guessed wrong.")        
-        
-    if lives == 0:
-      end_of_game = True
-      print("You lose.")
 
     #Join all the elements in the list and turn it into a String.
     print(f"{' '.join(display)}")
